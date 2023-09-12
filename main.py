@@ -12,17 +12,21 @@ st.write("""**Note**: sepsis definitions are evolving and difficult to finalize 
 st.write("For patients under 18, please use the Pediatric SIRS, Sepsis, and Septic Shock Criteria.")
 
 # Input fields for SIRS, sepsis, severe sepsis, septic shock, and multi-organ dysfunction criteria using radio buttons
-st.write(":orange[**SIRS Criteria (≥2 meets SIRS definition)**]")
+st.write(":orange[**Systemic inflammatory response syndrome (SIRS) Criteria (≥2 meets SIRS definition)**]")
 temperature = st.radio("Temp >38°C (100.4°F) or <36°C (96.8°F)?", ["No", "Yes"])
 heart_rate = st.radio("Heart Rate >90 bpm?", ["No", "Yes"])
 respiratory_rate = st.radio("Respiratory rate >20 or PaCO₂ <32 mm Hg?", ["No", "Yes"])
 white_blood_cells = st.radio("WBC >12,000/mm³, <4,000/mm³, or >10% bands?", ["No", "Yes"])
+
 st.write(":orange[**Sepsis Criteria (SIRS + Source of Infection)**]")
 sepsis = st.radio("Suspected or present source of infection", ["No", "Yes"])
+
 st.write(":orange[**Severe Sepsis Criteria (Organ Dysfunction, Hypotension, or Hypoperfusion)**]")
 severe_sepsis = st.radio("Lactic acidosis, SBP <90 or SBP drop ≥40 mm Hg of normal", ["No", "Yes"])
+
 st.write(":orange[**Septic Shock Criteria**]")
 septic_shock = st.radio("Severe sepsis with hypotension, despite adequate fluid resuscitation", ["No", "Yes"])
+
 st.write(":orange[**Multiple Organ Dysfunction Syndrome Criteria**]")
 multi_organ_failure = st.radio("Evidence of ≥2 organs failing", ["No", "Yes"])
 
