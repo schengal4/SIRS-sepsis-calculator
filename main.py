@@ -84,11 +84,12 @@ def main():
                 fluid resuscitation, early, broad-spectrum antibiotics, ICU consultation, CVP evaluation, and occasionally\
                 pressors and transfusion.**")
     elif has_sirs:
-        st.info("**This patient meets SIRS criteria.**")
+        st.info("**This patient meets SIRS criteria.**")    
+    
+    st.divider() # Divider to separate calculator from the further information below.
 
-    # Divider to separate calculator from the further information below.    
-    st.divider()
     # Buttons with more info if clicked on
+    st.write("Click the buttons below for more information.")
     col1, col2, col3 = st.columns(3)
     next_steps_button_clicked = col1.button("**Next Steps**", use_container_width=True)
     evidence_button_clicked = col2.button("**Evidence**", use_container_width=True)
@@ -100,8 +101,14 @@ def main():
     if creator_insights_button_clicked:
         creator_insights()
 
-    st.divider()
-    st.write("Note: This calculator is a replicate of a [MDCalc app](https://www.mdcalc.com/calc/1096/sirs-sepsis-septic-shock-criteria).")
+    st.divider() # Divider to separate the buttons section from the notes/acknowledgements below.
+
+    # Give credit to where I got the tool from.
+    st.write("**Notes:**\n"
+            "- This calculator is a replicate of the [SIRS, Sepsis, and Septic Shock "
+            "Criteria app](https://www.mdcalc.com/calc/1096/sirs-sepsis-septic-shock-criteria) from MDCalc.\n"
+            "- In addition to Dr. Robert A. Balk (the creator of this algorithm), Kamal Medlej, MD also contributed to the app's content."
+            )
 def next_steps():
     """
     Print out the next steps.
@@ -115,34 +122,34 @@ def next_steps():
     # Adding the content
     lines.append(
         "- When a patient presents with two or more *SIRS* criteria but with hemodynamic stability "
-        "(i.e. blood pressure at baseline), a clinical assessment must be made to determine the "
+        "(i.e., blood pressure at baseline), a clinical assessment must be made to determine the "
         "possibility of an infectious etiology."
     )
     lines.append(
-        "- If an infection is suspected or confirmed, the patient is diagnosed with *Sepsis* and a "
+        "- If an infection is suspected or confirmed, the patient is diagnosed with *Sepsis*, and a "
          "lactate level is obtained to determine the degree of hypoperfusion and inflammation. A "
          "lactate level ≥4 mmol/L is considered diagnostic for *Severe Sepsis*, and aggressive management "
-         "with broad spectrum antibiotics, intravenous fluids, and vasopressors should be initiated "
+         "with broad-spectrum antibiotics, intravenous fluids, and vasopressors should be initiated "
          "(aka *EGDT*)."
          )
     lines.append(
-        "- Patients that present with a suspected or confirmed infection AND hemodynamic instability "
+        "- Patients who present with a suspected or confirmed infection AND hemodynamic instability "
         "should immediately be treated for *Septic Shock*. While SIRS criteria will likely be present in "
         "these patients, aggressive management should not be delayed while waiting for laboratory values "
         "such as the WBC or lactate."
     )
     lines.append("- The management of *Severe Sepsis* and *Septic Shock* is the topic of intense research and scrutiny.")
     lines.append(
-        "- While *Early Goal Directed Therapy* has been advocated in the *Surviving Sepsis Guidelines*, there "
+        "- While *Early Goal-Directed Therapy* has been advocated in the *Surviving Sepsis Guidelines*, there "
         "remains controversy as to which of the bundled interventions are necessary."
     )
     lines.append(
-        '- Recent studies have showed *EGDT* not to be better than "usual care", and called for significant '
+        '- Recent studies have shown *EGDT* not to be better than "usual care", and called for significant '
         'amendments to currently used sepsis protocols.'
     )
     lines.append(
         "- To date, most experts agree that early recognition of *Sepsis*, *Severe Sepsis*, and *Septic Shock*, "
-        "and early administration of broad spectrum and organism specific antibiotic are the most critical "
+        "and early administration of broad-spectrum and organism-specific antibiotics are the most critical "
         "actions."
     )
     lines.append(
@@ -154,15 +161,15 @@ def next_steps():
     lines.append("- Assess all patients with 2 or more *SIRS* criteria for the possibility of an infectious etiology.")
     lines.append(
         "- Screen for *Severe Sepsis* by obtaining a lactate level on patients with *Sepsis*, " 
-        "that are elderly, immunocompromised, or ill appearing."
+        "that are elderly, immunocompromised, or ill-appearing."
     )
     lines.append(
         "- Some experts recommend obtaining a lactate level on all patients in whom blood cultures are sent. "
         "This is institution dependent however and not mandated in any guidelines."
     )
     lines.append(
-        "- When *Severe Sepsis* or *Septic Shock* are identified, initiate broad spectrum antibiotics immediately. "
-        "These antibiotics should be organism specific and therefore institutional antibiograms should be used."
+        "- When *Severe Sepsis* or *Septic Shock* is identified, initiate broad-spectrum antibiotics immediately. "
+        "These antibiotics should be organism-specific and therefore institutional antibiograms should be used."
     )
     lines.append(
         "- The *Surviving Sepsis Campaign Guidelines* recommend initiation of antimicrobials within one hour from the time "
@@ -190,11 +197,11 @@ def sepsis_information():
     sections.append("- SIRS - 2 YES answers meets criteria.")
     sections.append("- Sepsis Criteria - 2 YES of SIRS + Suspected Source of Infection.")
     sections.append("- Severe Sepsis Criteria - 2 YES of SIRS + Lactic Acidosis, SBP.")
-    sections.append("- Multiple Organ Dysfunction Syndrome - 2 YES of SIRS + Evidence of ≥ 2 Organs Failing.")
-    sections.append("Check with your own hospital for its sepsis guidelines, sepsis 'bundle' or sepsis algorithm. "
-                    "Two excellent sepsis references ([1](https://emcrit.org/squirt/severe-sepsis-resources/), \
-                    [2](https://crashingpatient.com/wp-content/pdf/Loma%20Linda%20STOP%20Sepsis%20Bundle.pdf)) \
-                    come from the [EMCrit](https://emcrit.org/) website.\n")
+    sections.append("- Multiple Organ Dysfunction Syndrome - 2 YES of SIRS + Evidence of ≥ 2 Organs Failing.\n")
+    sections.append("Check with your own hospital for its sepsis guidelines, sepsis 'bundle', or sepsis algorithm. "
+                    "Two excellent sepsis references ([1](https://emcrit.org/squirt/severe-sepsis-resources/), "
+                    "[2](https://crashingpatient.com/wp-content/pdf/Loma%20Linda%20STOP%20Sepsis%20Bundle.pdf)) "
+                    "come from the [EMCrit](https://emcrit.org/) website.\n")
     
     sections.append("**EVIDENCE APPRAISAL**")
     sections.append("- [This paper](https://pubmed.ncbi.nlm.nih.gov/1303622/) was released after the first consensus conference in 1991. The goal of this "
@@ -205,17 +212,17 @@ def sepsis_information():
     
     sections.append("**LITERATURE**\n")
     sections.append("ORIGINAL/PRIMARY REFERENCE")
-    sections.append("- [International Guidelines for Management of Severe Sepsis and Septic Shock: \
-                    2012](https://content.guidelinecentral.com/guideline/get/pdf/3525)")
+    sections.append("- [International Guidelines for Management of Severe Sepsis and Septic Shock: "
+                    "2012](https://content.guidelinecentral.com/guideline/get/pdf/3525)")
     sections.append("- Bone RC, Balk RA, Cerra FB, Dellinger RP, Fein AM, Knaus WA, Schein RM, Sibbald WJ. "
                     "[Definitions for sepsis and organ failure and guidelines for the use of innovative therapies in "
-                    "sepsis.](https://pubmed.ncbi.nlm.nih.gov/1303622/) The ACCP/SCCM Consensus \
-                    Conference Committee. American College of Chest "
+                    "sepsis.](https://pubmed.ncbi.nlm.nih.gov/1303622/) The ACCP/SCCM Consensus "
+                    "Conference Committee. American College of Chest "
                     "Physicians/Society of Critical Care Medicine.Chest. 1992 Jun;101(6):1644-55.\n")
     
     sections.append("CLINICAL PRACTICE GUIDELINES")
-    sections.append("- [Surviving Sepsis Campaign: International Guidelines for Management of Sepsis and \
-                    Septic Shock](https://journals.lww.com/ccmjournal/Fulltext/2021/11000/Surviving_Sepsis_Campaign__International.21.aspx): "
+    sections.append("- [Surviving Sepsis Campaign: International Guidelines for Management of Sepsis and "
+                    "Septic Shock](https://journals.lww.com/ccmjournal/Fulltext/2021/11000/Surviving_Sepsis_Campaign__International.21.aspx): "
                     "Critical Care Medicine\n")
     
     sections.append("OTHER REFERENCES")
@@ -238,20 +245,20 @@ def creator_insights():
             "septic patients who would be suitable for enrollment in clinical trials of new investigational agents "
             "that were thought to be able to block the proinflammatory cascade, and thus improve "
             "survival of patients with severe sepsis and septic shock. To accomplish this goal, the conference "
-            "participants aimed to use readily available clinical signs, symptoms and basic laboratory studies "
+            "participants aimed to use readily available clinical signs, symptoms, and basic laboratory studies "
             "that would then support a rapid diagnosis. The trade-off for such a sensitive group of parameters "
             "that would alert physicians to the early manifestations of severe sepsis and septic shock was "
             "a group of criteria that lacked a great deal of specificity. It was also recognized that the same "
-            "clinical signs, symptoms and laboratory data seen in patients with severe sepsis and septic shock "
+            "clinical signs, symptoms, and laboratory data seen in patients with severe sepsis and septic shock "
             "were also present in other populations of critically ill patients with other proinflammatory conditions"
             ", such as trauma, burns, pancreatitis, etc. It was therefore decided to define the patients with a "
             "documented or highly suspicious infection that results in a systemic inflammatory response as having "
             "sepsis. In the ICU, sepsis patients would typically manifest organ dysfunction (severe sepsis) "
-            "or septic shock, with or without multiple organ dysfunction syndrome.")
+            "or septic shock, with or without multiple organ dysfunction syndrome.\n")
         sections.append("The second goal of the consensus conference was to facilitate better communication in the literature "
-            "and scientific communication (including on rounds) which will enhance future comparative efforts "
+            "and scientific communication (including on rounds), which will enhance future comparative efforts "
             "among clinical trials and facilitate outcome comparisons of septic populations.\n")
-        sections.append("**What pearls, pitfalls and/or tips do you have for users of the SIRS Criteria? Are there cases "
+        sections.append("**What pearls, pitfalls, and/or tips do you have for users of the SIRS Criteria? Are there cases "
             "in which they have been applied, interpreted, or used inappropriately?**\n")
         sections.append("Users of the SIRS - Sepsis criteria need to understand that they are overly sensitive to identify "
             "potential patients as early as possible, but the criteria lack specificity. The 2001 international "
@@ -277,7 +284,7 @@ def creator_insights():
         sections.append("The future will likely include significant refinements in the SIRS criteria using biomarkers and PCR or "
             "nanotechnology to improve the specificity of the diagnosis and provide the information "
             "in a more rapid fashion.\n")
-        sections.append("**ABOUT THE CREATOR\n**")
+        sections.append("**ABOUT THE CREATOR**\n")
         sections.append("Robert A. Balk, MD, is a professor and practicing physician in pulmonology, internal medicine and "
             "critical care at Rush University Medical Center. His research interests include septic shock, acute "
             "lung injury, acute respiratory distress syndrome and ventilator-associated pneumonia.\n")
