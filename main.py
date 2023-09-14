@@ -10,7 +10,7 @@ def main():
     st.write("""**Note**: Sepsis definitions are evolving and difficult to finalize without a gold standard.\
             These criteria are what is reported and the literature is listed, but note that nuances\
             exist for all sepsis definitions and can differ locally, regionally, nationally, and \
-            internationally, as well as in clinical vs administrative vs research settings. Sepsis-3 \
+            internationally, as well as in clinical vs. administrative vs. research settings. Sepsis-3 \
             Consensus Definitions are frequently cited as one paradigm. """)
     st.write("For patients under 18, please use the Pediatric SIRS, Sepsis, and Septic Shock Criteria.")
 
@@ -191,7 +191,7 @@ def sepsis_information():
     
     # Adding the header and content
     sections.append("**FORMULA**\n")
-    sections.append("Series of Yes/No questions.\n")
+    sections.append("- Series of Yes/No questions.\n")
     
     sections.append("**FACTS & FIGURES**")
     sections.append("- SIRS - 2 YES answers meets criteria.")
@@ -260,34 +260,34 @@ def creator_insights():
             "among clinical trials and facilitate outcome comparisons of septic populations.\n")
         sections.append("**What pearls, pitfalls, and/or tips do you have for users of the SIRS Criteria? Are there cases "
             "in which they have been applied, interpreted, or used inappropriately?**\n")
-        sections.append("Users of the SIRS - Sepsis criteria need to understand that they are overly sensitive to identify "
-            "potential patients as early as possible, but the criteria lack specificity. The 2001 international "
-            "sepsis definition conference attempted to enhance the utility and specificity of the definition "
-            "by including additional signs, symptoms, laboratory data, biomarkers and physiologic parameters. "
+        sections.append("Users of the SIRS-Sepsis criteria need to understand that they are overly sensitive to identify "
+            "potential patients as early as possible, but the criteria lack specificity. The 2001 International "
+            "Sepsis Definition Conference attempted to enhance the utility and specificity of the definition "
+            "by including additional signs, symptoms, laboratory data, biomarkers, and physiologic parameters. "
             "Unfortunately, we are still awaiting the perfect clinical definition that has both high sensitivity "
             "and specificity for severe sepsis and septic shock.\n"
             )
         sections.append("For example, if you believe the patient has an infection AND meets the SIRS criteria, then the "
             "patient may be septic. Infection is likely its most useful application. The score is designed "
-            "to be sensitive, but not specific. It's meant to help with early diagnosis. SIRS was not designed "
+            "to be sensitive but not specific. It's meant to help with early diagnosis. SIRS was not designed "
             "to be algorithmic, such as: if you have a score of X, you must do Y. Rather, it's a table of points to "
             "see whether or not the patient has any of these criteria. You then apply that result to the specific "
             "clinical scenario.\n")
-        sections.append( "**What recommendations do you have for health care providers once they have applied the SIRS Criteria? "
-                         "Are there any adjustments or updates you would make to the criteria given recent changes in medicine?**\n")
+        sections.append( "**What recommendations do you have for healthcare providers once they have applied the SIRS Criteria? "
+                         "Are there any adjustments or updates you would make to the criteria, given recent changes in medicine?**\n")
         sections.append( "Investigators are continuing to refine the SIRS - Sepsis criteria and make them more clinically useful. "
             "The current approach has involved the use of various biomarkers to facilitate the identification "
             "of patients with a high likelihood of bacterial infection and/or high risk for morbidity and mortality. "
             "Some of the current biomarkers under evaluation include procalcitonin, C-reactive protein, "
-            "proadrenalmodulin, N-terminal BNP and lactate.\n")
+            "proadrenalmodulin, N-terminal BNP, and lactate.\n")
         sections.append("**Other comments? Any new research or papers on this topic in the pipeline?**\n")
         sections.append("The future will likely include significant refinements in the SIRS criteria using biomarkers and PCR or "
             "nanotechnology to improve the specificity of the diagnosis and provide the information "
             "in a more rapid fashion.\n")
         sections.append("**ABOUT THE CREATOR**\n")
-        sections.append("Robert A. Balk, MD, is a professor and practicing physician in pulmonology, internal medicine and "
+        sections.append("Robert A. Balk, MD, is a professor and practicing physician in pulmonology, internal medicine, and "
             "critical care at Rush University Medical Center. His research interests include septic shock, acute "
-            "lung injury, acute respiratory distress syndrome and ventilator-associated pneumonia.\n")
+            "lung injury, acute respiratory distress syndrome, and ventilator-associated pneumonia.\n")
         sections.append("*To view Dr. Robert A. Balk's publications, visit " 
             "[PubMed](https://pubmed.ncbi.nlm.nih.gov/?term=Balk+RA%5BAuthor%5D)*.")
         output = '\n'.join(sections)
