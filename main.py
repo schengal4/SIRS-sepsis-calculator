@@ -7,7 +7,7 @@ def main():
     # Instructions for using the calculator
     st.write(":black[**INSTRUCTIONS**]")
     st.write("Answer the questions and scroll down to see the results.")
-    st.write("""**Note**: sepsis definitions are evolving and difficult to finalize without a gold standard.\
+    st.write("""**Note**: Sepsis definitions are evolving and difficult to finalize without a gold standard.\
             These criteria are what is reported and the literature is listed, but note that nuances\
             exist for all sepsis definitions and can differ locally, regionally, nationally, and \
             internationally, as well as in clinical vs administrative vs research settings. Sepsis-3 \
@@ -15,26 +15,26 @@ def main():
     st.write("For patients under 18, please use the Pediatric SIRS, Sepsis, and Septic Shock Criteria.")
 
     # Input fields for SIRS
-    st.write(":orange[**Systemic inflammatory response syndrome (SIRS) Criteria (≥2 meets SIRS definition)**]")
+    st.write("**Systemic inflammatory response syndrome (SIRS) Criteria (≥2 meets SIRS definition)**")
     temperature = st.radio("Temp >38°C (100.4°F) or <36°C (96.8°F)?", ["No", "Yes"])
     heart_rate = st.radio("Heart Rate >90 bpm?", ["No", "Yes"])
     respiratory_rate = st.radio("Respiratory rate >20 or PaCO₂ <32 mm Hg?", ["No", "Yes"])
     white_blood_cells = st.radio("WBC >12,000/mm³, <4,000/mm³, or >10% bands?", ["No", "Yes"])
 
     # Input field for sepsis
-    st.write(":orange[**Sepsis Criteria (SIRS + Source of Infection)**]")
+    st.write("**Sepsis Criteria (SIRS + Source of Infection)**")
     sepsis = st.radio("Suspected or present source of infection", ["No", "Yes"])
 
     # Input field for severe sepsis
-    st.write(":orange[**Severe Sepsis Criteria (Organ Dysfunction, Hypotension, or Hypoperfusion)**]")
+    st.write("**Severe Sepsis Criteria (Organ Dysfunction, Hypotension, or Hypoperfusion)**")
     severe_sepsis = st.radio("Lactic acidosis, SBP <90 or SBP drop ≥40 mm Hg of normal", ["No", "Yes"])
 
     # Input field for septic shock
-    st.write(":orange[**Septic Shock Criteria**]")
+    st.write("**Septic Shock Criteria**")
     septic_shock = st.radio("Severe sepsis with hypotension, despite adequate fluid resuscitation", ["No", "Yes"])
 
     # Input field for multiple organ dysfunction syndrome
-    st.write(":orange[**Multiple Organ Dysfunction Syndrome Criteria**]")
+    st.write("**Multiple Organ Dysfunction Syndrome Criteria**")
     multi_organ_failure = st.radio("Evidence of ≥2 organs failing", ["No", "Yes"])
 
     # Check SIRS criteria
@@ -67,11 +67,11 @@ def main():
             st.error("**This patient meets multiple organ dysfunction syndrome criteria.**")
     elif has_septic_shock:
         if has_sepsis:
-            st.warning("**This patient meets septic shock criteria. Follow your guidelines for sepsis, which typically include\
+            st.error("**This patient meets septic shock criteria. Follow your guidelines for sepsis, which typically include\
                     aggressive fluid resuscitation, early, broad-spectrum antibiotics, ICU consultation, CVP evaluation,\
                     and occasionally pressors and transfusion.**")
         else:
-            st.warning("**This patient meets septic shock criteria.**")
+            st.error("**This patient meets septic shock criteria.**")
     elif has_severe_sepsis:
         if has_sepsis:
             st.warning("**This patient meets severe sepsis criteria. Follow your guidelines for sepsis, which typically include\
@@ -88,10 +88,6 @@ def main():
 
     # Divider to separate calculator from the further information below.    
     st.divider()
-    st.write("**Credits**")
-    st.write("This calculator is built off an [MDCalc app](https://www.mdcalc.com/calc/1096/sirs-sepsis-septic-shock-criteria).")
-    st.write("Much of the text in this app is taken verbatim from that app.")
-    st.divider()
     # Buttons with more info if clicked on
     col1, col2, col3 = st.columns(3)
     next_steps_button_clicked = col1.button("**Next Steps**", use_container_width=True)
@@ -103,7 +99,9 @@ def main():
         sepsis_information()
     if creator_insights_button_clicked:
         creator_insights()
-   
+
+    st.divider()
+    st.write("Note: This calculator is a replicate of a [MDCalc app](https://www.mdcalc.com/calc/1096/sirs-sepsis-septic-shock-criteria).")
 def next_steps():
     """
     Print out the next steps.
