@@ -16,26 +16,26 @@ def main():
 
     # Input fields for SIRS
     st.write("**Systemic inflammatory response syndrome (SIRS) Criteria (≥2 meets SIRS definition)**")
-    temperature = st.radio("Temp >38°C (100.4°F) or <36°C (96.8°F)?", ["No", "Yes"])
-    heart_rate = st.radio("Heart Rate >90 bpm?", ["No", "Yes"])
-    respiratory_rate = st.radio("Respiratory rate >20 or PaCO₂ <32 mm Hg?", ["No", "Yes"])
-    white_blood_cells = st.radio("WBC >12,000/mm³, <4,000/mm³, or >10% bands?", ["No", "Yes"])
+    temperature = st.radio("Temp >38°C (100.4°F) or <36°C (96.8°F)?", ["No", "Yes"], horizontal=True)
+    heart_rate = st.radio("Heart Rate >90 bpm?", ["No", "Yes"], horizontal = True)
+    respiratory_rate = st.radio("Respiratory rate >20 or PaCO₂ <32 mm Hg?", ["No", "Yes"], horizontal=True)
+    white_blood_cells = st.radio("WBC >12,000/mm³, <4,000/mm³, or >10% bands?", ["No", "Yes"], horizontal=True)
 
     # Input field for sepsis
     st.write("**Sepsis Criteria (SIRS + Source of Infection)**")
-    sepsis = st.radio("Suspected or present source of infection", ["No", "Yes"])
+    sepsis = st.radio("Suspected or present source of infection", ["No", "Yes"], horizontal=True)
 
     # Input field for severe sepsis
     st.write("**Severe Sepsis Criteria (Organ Dysfunction, Hypotension, or Hypoperfusion)**")
-    severe_sepsis = st.radio("Lactic acidosis, SBP <90 or SBP drop ≥40 mm Hg of normal", ["No", "Yes"])
+    severe_sepsis = st.radio("Lactic acidosis, SBP <90 or SBP drop ≥40 mm Hg of normal", ["No", "Yes"], horizontal=True)
 
     # Input field for septic shock
     st.write("**Septic Shock Criteria**")
-    septic_shock = st.radio("Severe sepsis with hypotension, despite adequate fluid resuscitation", ["No", "Yes"])
+    septic_shock = st.radio("Severe sepsis with hypotension, despite adequate fluid resuscitation", ["No", "Yes"], horizontal=True)
 
     # Input field for multiple organ dysfunction syndrome
     st.write("**Multiple Organ Dysfunction Syndrome Criteria**")
-    multi_organ_failure = st.radio("Evidence of ≥2 organs failing", ["No", "Yes"])
+    multi_organ_failure = st.radio("Evidence of ≥2 organs failing", ["No", "Yes"], horizontal=True)
 
     # Check SIRS criteria
     sirs_criteria_met = 0
